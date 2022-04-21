@@ -16,14 +16,15 @@
 // console.log(`doubleNums:`, doubleNums) // [20, 30, 40, 50, 60]
 
 
-const players = [
-    {id: `player-1` , name: `Mango` , timePlayed: 310 , points: 54,  online: false},
-    {id: `player-2` , name: `Poly` , timePlayed: 470 , points:  92,  online: true},
-    {id: `player-3` , name: `Kiwi` , timePlayed: 230 , points: 48,  online:  true},
-    {id: `player-4` , name: `Ajax` , timePlayed:  150, points: 71,  online:  false},
-    {id: `player-5` , name: `Chelsee` , timePlayed: 80 , points: 48,  online:  true},
-];
+// const players = [
+//     {id: `player-1` , name: `Mango` , timePlayed: 310 , points: 54,  online: false},
+//     {id: `player-2` , name: `Poly` , timePlayed: 470 , points:  92,  online: true},
+//     {id: `player-3` , name: `Kiwi` , timePlayed: 230 , points: 48,  online:  true},
+//     {id: `player-4` , name: `Ajax` , timePlayed:  150, points: 71,  online:  false},
+//     {id: `player-5` , name: `Chelsee` , timePlayed: 80 , points: 48,  online:  true},
+// ];
 
+// console.table(players)
 
 /*
  * Получаем миссив имён всех игроков
@@ -52,14 +53,45 @@ const players = [
  * Увеличиваем количество поинтов каждого игрока на 10%
  */
 
-const updatedPlayers = players.map( player => ({
-    ...player,
-    points: player.points * 1.1,
-})); 
+// const updatedPlayers = players.map( player => ({
+//     ...player,
+//     points: player.points * 1.1,
+// })); 
 
-console.table(updatedPlayers)
+// console.table(updatedPlayers)
 
 
 /*
- * Увеличиваем количество поинтов каждого игрока на 10%
+ * Увеличиваем кол-во часов игрока по id
  */
+
+// const playerIdToupdate = `player-3`
+
+// const updatedPlayers = players.map(player => {
+//     console.log(player.id)
+//     if(playerIdToupdate === player.id){
+//         console.log(`We have found ID`)
+
+//         return {
+//             ...player,
+//             timePlayed: player.timePlayed + 100,
+//         }
+//     }
+//     return player;
+// })
+
+// console.table(updatedPlayers)
+
+
+/*
+ * Увеличиваем кол-во часов игрока по id тернарник + рефакторинг без return
+ */
+
+// const updatedPlayers = players.map(player => 
+//      playerIdToupdate === player.id 
+//     ? {...player, timePlayed: player.timePlayed + 100,}
+//     : player,
+//     );
+       
+
+// console.table(updatedPlayers)
