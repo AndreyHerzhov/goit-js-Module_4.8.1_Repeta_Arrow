@@ -71,6 +71,7 @@
   /*
  * Собираем все теги из твитов
  */
+
 const tweets = [
     { id: '000', likes: 5, tags: ['js', 'nodejs'] },
     { id: '001', likes: 2, tags: ['html', 'css'] },
@@ -79,10 +80,61 @@ const tweets = [
     { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
   ];
 
-  const allTags = tweets.reduce((tags,tweet) => {
-      tags.push(...tweet.tags)
+  const allTags = tweets.reduce((acc,tweet) => {
+      acc.push(...tweet.tags)
       
-      return tags;
+      return acc;
   },[])
 
-  console.log(allTags)
+  // console.log(allTags)
+  
+
+  
+
+//   const allTags = tweets.reduce((acc,tweet) => {
+//     return [...acc, ...tweet.tags];
+// },[])
+
+// console.log(allTags)
+
+
+/*
+ * Ведём статистику тегов (не изменять по ссылке значение какого параметра!!!)
+ */
+
+// const tagsStat = allTags.reduce((acc,tag) => {
+//   console.log(acc)
+
+//   if(acc[tag]) {
+//     acc[tag] += 1;
+
+//     return acc;
+//   }
+
+//     acc[tag] = 1;
+    
+//     return acc;
+// }, {})
+
+const tagsStat = allTags.reduce(
+  (acc,tag) => ({ ...acc,[tag]: acc[tag]? acc[tag] + 1 : 1,}),
+  {},
+ );
+  // console.log(acc)
+
+  // if(acc[tag]) {
+     
+
+  //   return {
+  //           ...acc,
+  //           [tag]: acc.tag + 1,
+  //           };
+  // }
+
+  //   acc[tag] = 1;
+    
+  //   return acc;
+
+   
+
+console.log(tagsStat)

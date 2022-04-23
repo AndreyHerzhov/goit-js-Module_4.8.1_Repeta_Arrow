@@ -27,7 +27,7 @@ const players = [
   const playerId = players.find( ({id}) => id === playerIdToFind)
   console.log(playerId)
 
-  /*
+/*
  * Ищем игрока по имени
  */
 const playerNameToFind = 'Poly';
